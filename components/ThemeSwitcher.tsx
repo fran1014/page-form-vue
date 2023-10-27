@@ -4,6 +4,7 @@ import { useTheme } from 'next-themes';
 import React, { useEffect, useState } from 'react';
 import { Tabs, TabsTrigger } from './ui/tabs';
 import { TabsList } from '@radix-ui/react-tabs';
+import { SunIcon } from '@radix-ui/react-icons';
 
 function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
@@ -17,10 +18,9 @@ function ThemeSwitcher() {
   return (
     <Tabs defaultValue={theme}>
       <TabsList className="border">
-        <TabsTrigger
-          value="light"
-          onClick={() => setTheme('light')}
-        ></TabsTrigger>
+        <TabsTrigger value="light" onClick={() => setTheme('light')}>
+          <SunIcon className="h-[1.2rem] w-[1.2rem]" />
+        </TabsTrigger>
       </TabsList>
     </Tabs>
   );
